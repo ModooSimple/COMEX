@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="sale_order_view_form_inherit_l10n_co_wh" model="ir.ui.view">
+        <field name="name">l10n_co_wh.sale_order.view_form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_confirm'][2]" position="after">
+                <button name="calculate_rtefte" type="object" string="Retefuente"  attrs="{'invisible': [('state', 'not in', ['draft', 'sent', 'sale'])]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

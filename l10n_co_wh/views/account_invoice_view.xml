@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="account_invoice_supplier_view_form_inherit_l10n_co_wh" model="ir.ui.view">
+        <field name="name">l10n_co_wh.account_invoice_supplier.view_form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_invoice_open']" position="after">
+                <button name="calculate_rtefte" type="object" string="ReteFuente"  attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_invoice_view_form_inherit_l10n_co_wh" model="ir.ui.view">
+        <field name="name">l10n_co_wh.account_invoice.view_form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='460']" position="after">
+                <button name="calculate_rtefte" type="object" string="ReteFuente"  attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
